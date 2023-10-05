@@ -1,12 +1,17 @@
 public class Livro {
+    
+    public Livro(String author, int age, String title, String publisher) {
+        this.author = author;
+        this.age = age;
+        this.title = title;
+        this.publisher = publisher;
+    }
+
     String author;
     int age;
     String title;
     String publisher;
-    
-    void cumprimentar() {
-        System.out.println("Olá, meu nome é " + title);
-    }
+
     //metódos get
     public String getAuthor() {
         return author;
@@ -37,28 +42,6 @@ public class Livro {
     }
 
     public static void main(String[] args) {
-        Messi.getAge();
-        Messi.getAuthor();
-        Messi.getTitle();
-        Messi.getPublisher();
-
-        Jordan.getAge();
-        Jordan.getTitle();
-        Jordan.getPublisher();
-        Jordan.getAuthor();
-
-        Turing.getAge();
-        Turing.getTitle();
-        Turing.getPublisher();
-        Turing.getAuthor();
-
-        ElonMusk.getAge();
-        ElonMusk.getTitle();
-        ElonMusk.getPublisher();
-        ElonMusk.getAuthor();
-    }
-
-    public TestaLivro() {
         Livro ElonMusk = new Livro();
         ElonMusk.title = "Elon Musk Biografia";
         ElonMusk.age = 2023;
@@ -84,6 +67,30 @@ public class Livro {
         Messi.age = 1987;
         Messi.publisher = "Barcelona";
         Messi.author = "Lionel Andres Messi";
+
+
+        Messi.getAge();
+        Messi.getAuthor();
+        Messi.getTitle();
+        Messi.getPublisher();
+        Messi.toString();
+
+        Jordan.getAge();
+        Jordan.getTitle();
+        Jordan.getPublisher();
+        Jordan.getAuthor();
+
+        Turing.getAge();
+        Turing.getTitle();
+        Turing.getPublisher();
+        Turing.getAuthor();
+
+        ElonMusk.getAge();
+        ElonMusk.getTitle();
+        ElonMusk.getPublisher();
+        ElonMusk.getAuthor();
+
+
     }
 
 
