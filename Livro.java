@@ -1,11 +1,4 @@
 public class Livro {
-    
-    public Livro(String author, int age, String title, String publisher) {
-        this.author = author;
-        this.age = age;
-        this.title = title;
-        this.publisher = publisher;
-    }
 
     String author;
     int age;
@@ -40,6 +33,13 @@ public class Livro {
     public void setAge(int age) {
         this.age = age;
     }
+    
+    public Livro(String author, int age, String title, String publisher) {
+        this.author = author;
+        this.age = age;
+        this.title = title;
+        this.publisher = publisher;
+    }
 
     public static void main(String[] args) {
         Livro ElonMusk = new Livro();
@@ -62,23 +62,7 @@ public class Livro {
         Jordan.publisher = "Cantam";
         Jordan.author = "Jordan Belfort";
 
-        Livro Messi = new Livro();
-        Messi.title = "Messi Biografia sla";
-        Messi.age = 1987;
-        Messi.publisher = "Barcelona";
-        Messi.author = "Lionel Andres Messi";
-
-
-        Messi.getAge();
-        Messi.getAuthor();
-        Messi.getTitle();
-        Messi.getPublisher();
-        Messi.toString();
-
-        Jordan.getAge();
-        Jordan.getTitle();
-        Jordan.getPublisher();
-        Jordan.getAuthor();
+        Jordan.toString();
 
         Turing.getAge();
         Turing.getTitle();
@@ -90,8 +74,6 @@ public class Livro {
         ElonMusk.getPublisher();
         ElonMusk.getAuthor();
 
-
     }
-
 
 }
