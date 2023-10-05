@@ -1,4 +1,4 @@
-class Livro {
+public class Livro {
     String author;
     int age;
     String title;
@@ -7,20 +7,16 @@ class Livro {
     void cumprimentar() {
         System.out.println("Olá, meu nome é " + title);
     }
-
     //metódos get
     public String getAuthor() {
         return author;
     }
-
     public String getTitle() {
         return title;
     }
-
     public String getPublisher() {
         return publisher;
     }
-    
     public int getAge() {
         return age;
     }
@@ -30,20 +26,39 @@ class Livro {
     public void setAuthor(String author) {
         this.author = author;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
-
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
-    
     public void setAge(int age) {
         this.age = age;
     }
 
     public static void main(String[] args) {
+        Messi.getAge();
+        Messi.getAuthor();
+        Messi.getTitle();
+        Messi.getPublisher();
+
+        Jordan.getAge();
+        Jordan.getTitle();
+        Jordan.getPublisher();
+        Jordan.getAuthor();
+
+        Turing.getAge();
+        Turing.getTitle();
+        Turing.getPublisher();
+        Turing.getAuthor();
+
+        ElonMusk.getAge();
+        ElonMusk.getTitle();
+        ElonMusk.getPublisher();
+        ElonMusk.getAuthor();
+    }
+
+    public TestaLivro() {
         Livro ElonMusk = new Livro();
         ElonMusk.title = "Elon Musk Biografia";
         ElonMusk.age = 2023;
@@ -69,29 +84,6 @@ class Livro {
         Messi.age = 1987;
         Messi.publisher = "Barcelona";
         Messi.author = "Lionel Andres Messi";
-
-
-        Messi.getAge();
-        Messi.getAuthor();
-        Messi.getTitle();
-        Messi.getPublisher();
-
-        Jordan.getAge();
-        Jordan.getTitle();
-        Jordan.getPublisher();
-        Jordan.getAuthor();
-
-        Turing.getAge();
-        Turing.getTitle();
-        Turing.getPublisher();
-        Turing.getAuthor();
-
-        ElonMusk.getAge();
-        ElonMusk.getTitle();
-        ElonMusk.getPublisher();
-        ElonMusk.getAuthor();
-
-
     }
 
 
