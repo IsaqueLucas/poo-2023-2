@@ -1,55 +1,83 @@
-public class CalculadoraArea  extends FormaGeometrica {
+abstract class Figura {
+    abstract double calcularArea();
+    abstract double calcularPerimetro();
+}
 
-    static calcularAreaTotal() {
+class Circulo extends FormaGeometrica {
+    private double raio;
 
+    public Circulo(double raio) {
+        this.raio = raio;
+    }
+
+    @Override
+    double calcularArea() {
+        return Math.PI * raio * raio;
+    }
+
+    double calcularPerimetro() {
+        return 2 * Math.PI * raio;
+    }
+}
+
+class Retangulo extends Figura {
+    private double largura;
+    private double altura;
+
+    public Retangulo(double largura, double altura) {
+        this.largura = largura;
+        this.altura = altura;
+    }
+
+    @Override
+    double calcularArea() {
+        return largura * altura;
+    }
+
+    double calcularPerimetro() {
+        return 2 * Math.PI * raio;
+    }
+}
+
+class Triangulo extends FormaGeometrica {
+    private double base;
+    private double altura;
+    private double lado1;
+    private double lado2;
+
+    public Triangulo(double base, double altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+
+    @Override
+    double calcularArea() {
+        return (base * altura) / 2;
     }
     
-}
-public class Figura {
-    static calcularAreaTotal() {
-    }
-    static calcularPerimetroTotal() {
-    }
-
-}
-
-public class Quadrado extends Figura {
-    int lado;
-    double calcularAreaTotal() {
-        return lado*lado;
-    };
-}
-
-public class Triangulo extends Figura {
-    double lado1;
-    double lado2;
-    double base;
-    double altura;
-
-    double calcularAreaTotal() {
-        return altura*base/2;
-    }
-    double calcularPerimetroTotal() {
-        return lado1+lado2+base;
+    double calcularPerimetro() {
+        return lado1 + lado2 + base;
     }
 }
 
-public class Circulo extends Figura {
-    int raio;
-    double calcularAreaTotal() {
-        return raio*2*3.14;
+public class CalculadoraArea {
+    public static double calcularAreaTotal(FormaGeometrica[] formas) {
+        double areaTotal = 0;
+        for (FormaGeometrica forma : formas) {
+            areaTotal += forma.calcularArea();
+        }
+        return areaTotal;
     }
-    double calcularPerimetroTotal() {
-        return raio*2*3.14;
-    }
-}
 
-public class Retangulo extends Quadrado {
-    int altura;
-    double calcularAreaTotal() {
-        return lado*altura;
-    }
-    double calcularPerimetroTotal() {
-        return (lado+altura)*2;
+    public static void main(String[] args) {
+        Circulo circulo = new Circulo(7.3);
+        Retangulo retangulo = new Retangulo(3.0, 4.0);
+        Triangulo triangulo = new Triangulo(6.0, 3.0);
+
+
+        FormaGeometrica[] formas = {circulo, retangulo, triangulo};
+
+        double areaTotal = calcularAreaTotal(formas);
+        System.out.println("Área total das formas: " + areaTotal);
     }
 }
